@@ -1,0 +1,48 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Vi editing mode
+set -o vi
+
+# Long persistent history
+export HISTFILESIZE=100000
+export HISTSIZE=100000
+shopt -s histappend
+
+# Combine multiline commands into one in history
+shopt -s cmdhist
+
+# Do not save consecutive duplicate commnads or commnads that start with a space
+HISTCONTROL=ignoreboth
+
+# Show files after changing directory.
+cdls() {
+    builtin cd $@
+    ls
+}
+alias cd='cdls'
+
+# Tab completion ignores case
+bind 'set completion-ignore-case on'
+
+# Search history with up and down arrows
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
+# I use Vim
+export EDITOR="vim"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/deck/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/deck/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
