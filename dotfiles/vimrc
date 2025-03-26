@@ -95,6 +95,7 @@ map n nzz
 " Folding Stuffs
 set foldmethod=syntax
 set foldnestmax=1
+set foldlevelstart=99
 nnoremap <space> za
 
 " No error bells
