@@ -34,6 +34,9 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.micro-full
+    pkgs.man
+    pkgs.man-pages
+    pkgs.man-pages-posix
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
