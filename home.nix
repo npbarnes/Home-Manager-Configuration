@@ -33,7 +33,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.micro-full
     pkgs.man
     pkgs.man-pages
     pkgs.man-pages-posix
