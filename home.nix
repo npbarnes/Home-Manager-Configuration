@@ -89,8 +89,8 @@
     enable = true;
     package = pkgs.vscodium;
     profiles.default.extensions = [
-      pkgs.vscode-extensions.bbenoist.nix
-      pkgs.vscode-extensions.julialang.language-julia
+      pkgs.vscode-marketplace.bbenoist.nix
+      pkgs.vscode-marketplace.julialang.language-julia
     ];
   };
 
