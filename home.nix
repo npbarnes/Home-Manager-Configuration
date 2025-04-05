@@ -90,6 +90,7 @@
     package = pkgs.vscodium;
     profiles.default.extensions = [
       pkgs.vscode-extensions.bbenoist.nix
+      pkgs.vscode-extensions.julialang.language-julia
     ];
   };
 
