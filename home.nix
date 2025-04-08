@@ -54,6 +54,8 @@
     ".bashrc".source = config.lib.file.mkOutOfStoreSymlink dotfiles/bashrc;
     ".vimrc".source = config.lib.file.mkOutOfStoreSymlink dotfiles/vimrc;
 
+    ".local/share/applications/firefox.desktop".source = firefox.desktop
+
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose

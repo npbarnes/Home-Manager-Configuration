@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/deck/nix-profile/bin/firefox
+TryExec=/home/deck/nix-profile/bin/firefox
+Name=Firefox
+GenericName=Web Browser
+Icon=/home/deck/icons/firefoxbrowser.ico
+Terminal=false
+Categories=Internet;
