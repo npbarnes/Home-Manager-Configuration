@@ -49,16 +49,19 @@
     # An out of store symlink can be to a writable location. That way, you
     # can directly update e.g. ~/.vimrc and see changes immediately without
     # requiring a `home-manager switch`.
-    ".bashrc".source = config.lib.file.mkOutOfStoreSymlink dotfiles/bashrc;
-    ".vimrc".source = config.lib.file.mkOutOfStoreSymlink dotfiles/vimrc;
-
-    ".local/share/applications/firefox.desktop".source = ./firefox.desktop;
+    # ".vimrc".source = config.lib.file.mkOutOfStoreSymlink dotfiles/vimrc;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    ".bashrc".source = config.lib.file.mkOutOfStoreSymlink dotfiles/bashrc;
+    ".vimrc".source = config.lib.file.mkOutOfStoreSymlink dotfiles/vimrc;
+
+    # Setup a basic firefox .desktop file.
+    ".local/share/applications/firefox.desktop".source = ./firefox.desktop;
   };
 
   # Home Manager can also manage your environment variables through
