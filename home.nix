@@ -67,6 +67,10 @@
 
     # Setup a basic firefox .desktop file.
     ".local/share/applications/firefox.desktop".source = ./firefox.desktop;
+
+    # SSH config
+    ".ssh/config".source = config.lib.file.mkOutOfStoreSymlink
+      "${configDir}/dotfiles/ssh/config";
   };
 
   # Home Manager can also manage your environment variables through
