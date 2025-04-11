@@ -57,8 +57,10 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    ".bashrc".source = config.lib.file.mkOutOfStoreSymlink dotfiles/bashrc;
-    ".vimrc".source = config.lib.file.mkOutOfStoreSymlink dotfiles/vimrc;
+    ".bashrc".source = config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/.config/home-manager/dotfiles/bashrc";
+    ".vimrc".source = config.lib.file.mkOutOfStoreSymlink
+      "${config.home.homeDirectory}/.config/home-manager/dotfiles/vimrc";
 
     # Setup a basic firefox .desktop file.
     ".local/share/applications/firefox.desktop".source = ./firefox.desktop;
