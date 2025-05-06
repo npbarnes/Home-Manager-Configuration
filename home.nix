@@ -36,6 +36,7 @@
     pkgs.man
     pkgs.man-pages
     pkgs.man-pages-posix
+    pkgs.jujutsu
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
