@@ -101,10 +101,33 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
+    profiles.default.enableUpdateCheck = true;
+    profiles.default.enableExtensionUpdateCheck = true;
     profiles.default.extensions = [
       pkgs.vscode-marketplace.bbenoist.nix
       pkgs.vscode-marketplace.julialang.language-julia
     ];
+    profiles.default.userSettings = {
+      "terminal.integrated.commandsToSkipShell" = [
+        "language-julia.interrupt"
+      ];
+      "julia.symbolCacheDownload" = true;
+      "julia.enableTelemetry" = false;
+      "julia.executablePath" = "${config.home.homeDirectory}/.juliaup/bin/julia";
+      "julia.lint.call" = false;
+      "editor.codeLens" = false;
+      "merge-confict.codeLens.enabled" = false;
+      "editor.acceptSuggestionOnEnter" = "smart";
+      "editor.lightbulb.enabled" = false;
+      "editor.fontFamily" = "JuliaMono";
+      "editor.stickyScroll.enabled" = false;
+      "editor.minimap.enabled" = false;
+      "editor.unicodeHighlight.ambiguousCharacters" = false;
+      "editor.parameterHints.enabled" = false;
+      "editor.suggest.showTypeParameters" = false;
+      "editor.hover.enabled" = false;
+      "breadcrumbs.showTypeParameters" = false;
+    };
   };
 
   programs.firefox = {
