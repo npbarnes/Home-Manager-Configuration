@@ -118,7 +118,7 @@
       "editor.codeLens" = false;
       "merge-confict.codeLens.enabled" = false;
       "editor.acceptSuggestionOnEnter" = "smart";
-      "editor.lightbulb.enabled" = false;
+      "editor.lightbulb.enabled" = "off";
       "editor.fontFamily" = "JuliaMono";
       "editor.stickyScroll.enabled" = false;
       "editor.minimap.enabled" = false;
