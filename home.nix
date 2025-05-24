@@ -16,6 +16,10 @@
     (pkgs.rWrapper.override {
       packages = [
         pkgs.rPackages.languageserver
+        pkgs.rPackages.jsonlite
+        pkgs.rPackages.rlang
+        pkgs.rPackages.radian
+        pkgs.rPackages.httpgd
         flexplot
       ];
     })
