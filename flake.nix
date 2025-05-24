@@ -13,14 +13,25 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    flexplot-src = {
+      type = "github";
+      owner = "dustinfife";
+      repo = "flexplot";
+      flake = false;
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nix-vscode-extensions, ... }:
+  outputs = { nixpkgs, home-manager, nix-vscode-extensions, flexplot-src, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         overlays = [ nix-vscode-extensions.overlays.default ];
+      };
+      flexplot = pkgs.rPackages.buildRPackage {
+        name = "flexplot";
+        src = flexplot-src;
       };
     in {
       homeConfigurations."deck" = home-manager.lib.homeManagerConfiguration {
@@ -32,6 +43,7 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+        extraSpecialArgs = { inherit flexplot; };
       };
     };
 }

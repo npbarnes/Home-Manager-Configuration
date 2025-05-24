@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, flexplot, ... }:
 {
   home.username = "deck";
   home.homeDirectory = "/home/deck";
@@ -16,7 +16,7 @@
     (pkgs.rWrapper.override {
       packages = [
         pkgs.rPackages.languageserver
-        pkgs.rPackages.flexplot
+        flexplot
       ];
     })
   ];
