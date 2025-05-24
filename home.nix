@@ -37,6 +37,13 @@
     pkgs.man-pages
     pkgs.man-pages-posix
     pkgs.jujutsu
+    pkgs.rWrapper.override {
+      packages = [
+        pkgs.rPackages.languageserver
+        pkgs.rPackages.flexplot
+      ]
+    }
+
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -106,6 +113,7 @@
     profiles.default.extensions = [
       pkgs.vscode-marketplace.bbenoist.nix
       pkgs.vscode-marketplace.julialang.language-julia
+      pkgs.vscode-marketplace.REditorSupport.r
     ];
     profiles.default.userSettings = {
       "terminal.integrated.commandsToSkipShell" = [
