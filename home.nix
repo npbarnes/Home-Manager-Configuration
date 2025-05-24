@@ -51,7 +51,7 @@
     profiles.default.extensions = [
       pkgs.vscode-marketplace.bbenoist.nix
       pkgs.vscode-marketplace.julialang.language-julia
-      pkgs.vscode-marketplace.REditorSupport.r
+      pkgs.vscode-marketplace.reditorsupport.r
     ];
     profiles.default.userSettings = {
       "terminal.integrated.commandsToSkipShell" = [
