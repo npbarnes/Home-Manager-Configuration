@@ -32,6 +32,25 @@
       flexplot = pkgs.rPackages.buildRPackage {
         name = "flexplot";
         src = flexplot-src;
+        propagatedBuildInputs = [
+          pkgs.rPackages.cowplot
+          pkgs.rPackages.MASS
+          pkgs.rPackages.tibble
+          pkgs.rPackages.withr
+          pkgs.rPackages.dplyr
+          pkgs.rPackages.magrittr
+          pkgs.rPackages.forcats
+          pkgs.rPackages.purrr
+          pkgs.rPackages.plyr
+          pkgs.rPackages.R6
+          pkgs.rPackages.ggplot2
+          pkgs.rPackages.patchwork
+          pkgs.rPackages.ggsci
+          pkgs.rPackages.lme4
+          pkgs.rPackages.party
+          pkgs.rPackages.mgcv
+          pkgs.rPackages.rlang
+        ];
       };
     in {
       homeConfigurations."deck" = home-manager.lib.homeManagerConfiguration {
