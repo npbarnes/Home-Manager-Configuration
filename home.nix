@@ -13,16 +13,20 @@
     pkgs.man-pages
     pkgs.man-pages-posix
     pkgs.jujutsu
+
     (pkgs.rWrapper.override {
       packages = [
         pkgs.rPackages.languageserver
         pkgs.rPackages.jsonlite
         pkgs.rPackages.rlang
-        pkgs.rPackages.radian
         pkgs.rPackages.httpgd
         flexplot
       ];
     })
+
+    (pkgs.python3.withPackages (python-pkgs: [
+      python-pkgs.radian
+    ]))
   ];
 
   home.file = let
