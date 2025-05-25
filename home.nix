@@ -72,6 +72,7 @@ in
       "julia.lint.call" = false;
       "r.rpath.linux" = "${radian_with_packages.outPath}/bin/R";
       "r.rterm.linux" = "${radian_with_packages.outPath}/bin/radian";
+      "r.plot.useHttpgd" = true;
       "editor.codeLens" = false;
       "merge-confict.codeLens.enabled" = false;
       "editor.acceptSuggestionOnEnter" = "smart";
