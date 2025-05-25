@@ -70,8 +70,8 @@ in
       "julia.enableTelemetry" = false;
       "julia.executablePath" = "${config.home.homeDirectory}/.juliaup/bin/julia";
       "julia.lint.call" = false;
+      "r.rpath.linux" = "${radian_with_packages.outPath}/bin/R";
       "r.rterm.linux" = "${radian_with_packages.outPath}/bin/radian";
-      "r.libPaths" = map (x: "${x.outPath}/library") my_r_packages;
       "editor.codeLens" = false;
       "merge-confict.codeLens.enabled" = false;
       "editor.acceptSuggestionOnEnter" = "smart";
