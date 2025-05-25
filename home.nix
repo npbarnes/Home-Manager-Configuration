@@ -1,4 +1,15 @@
 { config, pkgs, flexplot, ... }:
+let
+  radian_with_packages = (pkgs.radianWrapper.override {
+      packages = [
+        pkgs.rPackages.languageserver
+        pkgs.rPackages.jsonlite
+        pkgs.rPackages.rlang
+        pkgs.rPackages.httpgd
+        flexplot
+      ];
+    });
+in
 {
   home.username = "deck";
   home.homeDirectory = "/home/deck";
@@ -13,16 +24,7 @@
     pkgs.man-pages
     pkgs.man-pages-posix
     pkgs.jujutsu
-
-    (pkgs.radianWrapper.override {
-      packages = [
-        pkgs.rPackages.languageserver
-        pkgs.rPackages.jsonlite
-        pkgs.rPackages.rlang
-        pkgs.rPackages.httpgd
-        flexplot
-      ];
-    })
+    radian_with_packages
   ];
 
   home.file = let
@@ -65,6 +67,7 @@
       "julia.enableTelemetry" = false;
       "julia.executablePath" = "${config.home.homeDirectory}/.juliaup/bin/julia";
       "julia.lint.call" = false;
+      "r.rterm.linux" = "${radian_with_packages.outPath}/bin/radian";
       "editor.codeLens" = false;
       "merge-confict.codeLens.enabled" = false;
       "editor.acceptSuggestionOnEnter" = "smart";
