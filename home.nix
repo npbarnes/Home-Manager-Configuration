@@ -1,14 +1,16 @@
 { config, pkgs, flexplot, ... }:
 let
+  my_r_packages = [
+    pkgs.rPackages.languageserver
+    pkgs.rPackages.jsonlite
+    pkgs.rPackages.rlang
+    pkgs.rPackages.httpgd
+    flexplot
+  ];
+
   radian_with_packages = (pkgs.radianWrapper.override {
-      packages = [
-        pkgs.rPackages.languageserver
-        pkgs.rPackages.jsonlite
-        pkgs.rPackages.rlang
-        pkgs.rPackages.httpgd
-        flexplot
-      ];
-    });
+    packages = my_r_packages;
+  });
 in
 {
   home.username = "deck";
@@ -68,6 +70,7 @@ in
       "julia.executablePath" = "${config.home.homeDirectory}/.juliaup/bin/julia";
       "julia.lint.call" = false;
       "r.rterm.linux" = "${radian_with_packages.outPath}/bin/radian";
+      "r.libPaths" = map (x: "${x.outPath}/library") my_r_packages;
       "editor.codeLens" = false;
       "merge-confict.codeLens.enabled" = false;
       "editor.acceptSuggestionOnEnter" = "smart";
