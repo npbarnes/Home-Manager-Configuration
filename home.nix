@@ -85,8 +85,8 @@ in
       "editor.suggest.showTypeParameters" = false;
       "editor.hover.enabled" = false;
       "breadcrumbs.showTypeParameters" = false;
-      "[julia]"."editor.tabsize" = 4;
-      "[r]"."editor.tabsize" = 2;
+      "[julia]"."editor.tabSize" = 4;
+      "[r]"."editor.tabSize" = 2;
     };
   };
 
