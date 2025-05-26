@@ -39,6 +39,9 @@ in
     ".vimrc".source = config.lib.file.mkOutOfStoreSymlink
       "${configDir}/dotfiles/vimrc";
 
+    ".config/VSCodium/User/settings.json".source = config.lib.file.mkOutOfStoreSymlink
+      "${configDir}/dotfiles/VSCodium/settings.json";
+
     # Setup a basic firefox .desktop file.
     ".local/share/applications/firefox.desktop".source = ./firefox.desktop;
 
@@ -62,32 +65,6 @@ in
       pkgs.vscode-marketplace.julialang.language-julia
       pkgs.vscode-marketplace.reditorsupport.r
     ];
-    profiles.default.userSettings = {
-      "terminal.integrated.commandsToSkipShell" = [
-        "language-julia.interrupt"
-      ];
-      "julia.symbolCacheDownload" = true;
-      "julia.enableTelemetry" = false;
-      "julia.executablePath" = "${config.home.homeDirectory}/.juliaup/bin/julia";
-      "julia.lint.call" = false;
-      "r.rpath.linux" = "${radian_with_packages.outPath}/bin/R";
-      "r.rterm.linux" = "${radian_with_packages.outPath}/bin/radian";
-      "r.plot.useHttpgd" = true;
-      "editor.codeLens" = false;
-      "merge-confict.codeLens.enabled" = false;
-      "editor.acceptSuggestionOnEnter" = "smart";
-      "editor.lightbulb.enabled" = "off";
-      "editor.fontFamily" = "JuliaMono";
-      "editor.stickyScroll.enabled" = false;
-      "editor.minimap.enabled" = false;
-      "editor.unicodeHighlight.ambiguousCharacters" = false;
-      "editor.parameterHints.enabled" = false;
-      "editor.suggest.showTypeParameters" = false;
-      "editor.hover.enabled" = false;
-      "breadcrumbs.showTypeParameters" = false;
-      "[julia]"."editor.tabSize" = 4;
-      "[r]"."editor.tabSize" = 2;
-    };
   };
 
   programs.firefox = {
