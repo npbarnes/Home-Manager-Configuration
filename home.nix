@@ -5,6 +5,7 @@ let
     pkgs.rPackages.jsonlite
     pkgs.rPackages.rlang
     pkgs.rPackages.httpgd
+    pkgs.rPackages.tidyverse
     flexplot
   ];
 
