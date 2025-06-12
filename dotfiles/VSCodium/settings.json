@@ -1,0 +1,36 @@
+{
+  "[julia]": {
+    "editor.tabSize": 4
+  },
+  "[r]": {
+    "editor.tabSize": 2
+  },
+  "breadcrumbs.showTypeParameters": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.codeLens": false,
+  "editor.fontFamily": "JuliaMono",
+  "editor.hover.enabled": false,
+  "editor.lightbulb.enabled": "off",
+  "editor.minimap.enabled": false,
+  "editor.parameterHints.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.suggest.showTypeParameters": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.rulers": [92],
+  "julia.enableTelemetry": false,
+  "julia.executablePath": "/home/deck/.juliaup/bin/julia",
+  "julia.lint.call": false,
+  "julia.symbolCacheDownload": true,
+  "r.plot.useHttpgd": true,
+  "r.rpath.linux": "/home/deck/.nix-profile/bin/R",
+  "r.rterm.linux": "/home/deck/.nix-profile/bin/radian",
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
+  "merge-conflict.codeLens.enabled": false,
+  "editor.autoClosingQuotes": "never",
+  "editor.autoClosingDelete": "never",
+  "editor.autoClosingOvertype": "never",
+  "editor.autoClosingBrackets": "never",
+  "debug.toolBarLocation": "docked"
+}
